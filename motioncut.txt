@@ -1,0 +1,41 @@
+def count_words(text):
+    """
+    Count the number of words in the provided text.
+    
+    Args:
+        text (str): The text to count words in
+        
+    Returns:
+        int: The number of words in the text
+    """
+    # Handle empty input
+    if not text.strip():
+        return 0
+    
+    # Split the text by whitespace and count the words
+    words = text.split()
+    return len(words)
+
+def main():
+    print("===== Word Counter Program =====")
+    
+    # Get user input
+    user_text = input("Please enter your text: ")
+    
+    # Count words and display result
+    word_count = count_words(user_text)
+    
+    # Display the result
+    print(f"\nWord count: {word_count}")
+    
+    # Additional info for user
+    if word_count == 0:
+        print("No words were found in your input.")
+    elif word_count == 1:
+        print("You entered a single word.")
+    else:
+        print(f"You entered {word_count} words.")
+
+# Run the program if this file is executed directly
+if _name_ == "_main_":
+    main()
